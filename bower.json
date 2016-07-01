@@ -1,0 +1,12 @@
+{
+  "name": "railgular",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "angular-resource": "^1.5.3",
+    "angular-bootstrap": "^1.3.2",
+    "AngularDevise": "angular-devise#^1.3.0",
+    "angular-ui-router": "^0.2.18"
+  }
+}

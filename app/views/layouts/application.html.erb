@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railgular</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+  </head>
+
+  <body ng-app="railgular">
+    <div class="col-12">
+      <div ng-include="'nav/_nav.html'"></div>
+    </div>
+    <div class="container">
+      <!-- <div ng-view=""></div> -->
+      <ui-view></ui-view>
+    </div>
+    <%= yield %>
+  </body>
+</html>

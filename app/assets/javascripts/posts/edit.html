@@ -1,0 +1,19 @@
+<div class="row" ng-controller="updatePostsController">
+	<h1>Edit {{post.title}}</h1>
+
+	<form>
+	    <div class="form-group">
+	        <label>Title</label>		
+	        <input class="form-control" ng-model="post.title"></input>
+	    </div>
+	    <div class="form-group">
+	        <label>Description</label>
+	        <textarea class="form-control" ng-model="post.description"></textarea>
+	    </div>
+	    <input type="submit" class="btn btn-primary" value="Save" ng-click="update()"></input>
+	</form>
+</div>
+<div class="row">
+	<a href="/#/posts/{{post.id}}/edit">Edit</a>
+	<a href="/#/posts">Back</a>
+</div>
