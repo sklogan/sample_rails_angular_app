@@ -4,17 +4,20 @@
 <div class="col-md-offset-4 col-md-4">
   <div class="row">
     <form ng-submit="register()">
-      <fieldset class="form-group">
+      <fieldset class="form-group" ng-class="{true: 'has-danger'}[errors.email.length > 0]">
         <label>Email</label>
-        <input type="email" class="form-control" ng-model="user.email">
+        <input type="email" class="form-control" ng-model="user.email">        
+        <span ng-repeat="error in errors.email" class="text-help">{{error}}</span>
       </fieldset>
-      <fieldset class="form-group">
+      <fieldset class="form-group" ng-class="{true: 'has-danger'}[errors.password.length > 0]">
         <label>Password</label>
         <input type="password" class="form-control" ng-model="user.password">
+        <span ng-repeat="error in errors.password" class="text-help">{{error}}</span>
       </fieldset>
-      <fieldset>
+      <fieldset ng-class="{true: 'has-danger'}[errors.password_confirmation.length > 0]">
         <label>Password confirmation</label>
         <input type="password" class="form-control" ng-model="user.password_confirmation">
+        <span ng-repeat="error in errors.password_confirmation" class="text-help">{{error}}</span>
       </fieldset>
       <div class="checkbox"></div>
       <button type="submit" class="btn btn-primary">Register</button>

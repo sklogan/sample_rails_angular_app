@@ -1,7 +1,7 @@
 <div class="row">
   <h1>Posts</h1>
-  <div class="span6 pull-right">
-    <a href="/#/posts/new"><i class="fa fa-plus-circle"></i> Add New</a>
+  <div class="span6 pull-right" ng-controller="navController">
+    <a href="/#/posts/new" ng-if="signedIn()"><i class="fa fa-plus-circle"></i> Add New</a>
   </div>  
   <table class="table table-hover">
     <thead>
@@ -17,8 +17,11 @@
           <td><a href="/#/posts/{{post.id}}">{{post.title}}</a></td>
           <td>{{post.description}}</td>
           <td>
-            <a href="/#/posts/{{post.id}}/edit"><i class="fa fa-edit"></i></a>
-            <a data-confirm="Are you sure?" rel="nofollow"  ng-click="delete(post.id)"><i class="fa fa-trash"></i></a>
+          {{user.id == post.user_id}}
+            <div ng-if="user.id == post.user_id">
+              <a href="/#/posts/{{post.id}}/edit"><i class="fa fa-edit"></i></a>
+              <a data-confirm="Are you sure?" rel="nofollow"  ng-click="delete(post.id)"><i class="fa fa-trash"></i></a>
+            </div>
           </td>
         </tr>
     </tbody>

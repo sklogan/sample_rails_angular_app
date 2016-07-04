@@ -19,5 +19,4 @@
 //= require angular-rails-templates
 //= require AngularDevise/lib/devise-min.js
 //= require angularjs-file-upload
-//= require_tree ../templates
 //= require_tree .

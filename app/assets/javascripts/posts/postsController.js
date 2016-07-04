@@ -1,6 +1,7 @@
-app.controller('postsController', function($scope, $state, Post){
+app.controller('postsController', function($scope, $state, Post, Auth){
    Post.query(function(data) {
     $scope.posts = data;
+    $scope.user = Auth.currentUser();
   });
 
   $scope.delete = function(post_id) {
