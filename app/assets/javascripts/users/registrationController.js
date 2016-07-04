@@ -4,7 +4,7 @@ app.controller('registrationController', function($scope, $state, Auth){
     	$scope.user = registeredUser;
         $state.go('posts');
     }, function(error) {
-        // Registration failed...
+      $scope.errors = error.data.errors;  
     });
   };
 
