@@ -17,7 +17,6 @@
           <td><a href="/#/posts/{{post.id}}">{{post.title}}</a></td>
           <td>{{post.description}}</td>
           <td>
-          {{user.id == post.user_id}}
             <div ng-if="user.id == post.user_id">
               <a href="/#/posts/{{post.id}}/edit"><i class="fa fa-edit"></i></a>
               <a data-confirm="Are you sure?" rel="nofollow"  ng-click="delete(post.id)"><i class="fa fa-trash"></i></a>

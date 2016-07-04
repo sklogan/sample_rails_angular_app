@@ -1,22 +1,3 @@
-// app.config(function ($routeProvider) {
-//   $routeProvider
-//     .when('/', {
-//       templateUrl: 'posts/index.html',
-//       controller: 'postsController'
-//     }).when('/posts/new', {
-//       templateUrl: 'posts/new.html',
-//     }).when('/posts/:id', {
-//       templateUrl: 'posts/show.html',
-//       controller: 'showPostsController'
-//     }).when('/posts/:id/edit', {
-//       templateUrl: 'posts/edit.html',
-//       controller: 'showPostsController'
-//     })  
-//     .otherwise({
-//       redirectTo: '/'
-//     });
-// });
-
 app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('login', {
