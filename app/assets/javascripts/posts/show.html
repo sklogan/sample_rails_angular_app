@@ -1,13 +1,7 @@
 <div class="row">
-	<p>
-	  <strong>Title:</strong>
-	  {{post.title}}
-	</p>
-
-	<p>
-	  <strong>Description:</strong>
-	  {{post.description }}
-	</p>
+	<h1>{{post.title}}</h1>
+	<div class="post-info">{{post.created_at | date:'dd MMM yyyy'}} - {{post.user.first_name}} </div>
+	<div class="post-description" ng-bind-html="getHtml(post.description)"></div>
 </div>
 
 <div class="row">

@@ -19,4 +19,6 @@
 //= require angular-rails-templates
 //= require AngularDevise/lib/devise-min.js
 //= require angularjs-file-upload
+//= require tinymce-dist/tinymce.js
+//= require angular-ui-tinymce/src/tinymce.js
 //= require_tree .
