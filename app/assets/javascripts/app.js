@@ -1,4 +1,4 @@
-var app = angular.module('railgular', ['ui.router','ngRoute', 'ngResource','templates', 'Devise', 'ui.tinymce']);
+var app = angular.module('railgular', ['ui.router','ngRoute', 'ngResource','templates', 'Devise', 'ui.tinymce', 'ngFileUpload']);
 
 app.filter('previewBlog', function() {
   return function(text) {

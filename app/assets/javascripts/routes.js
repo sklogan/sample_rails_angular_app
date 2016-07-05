@@ -10,7 +10,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       controller: 'registrationController'
     }).state('edit_user', {
       url: '/users/edit',
-      templateUrl: 'users/edit.html'      
+      templateUrl: 'users/edit.html',      
+      controller: 'userUpdateController'
     }).state('posts', {
       url: '/',
       templateUrl: 'posts/index.html',

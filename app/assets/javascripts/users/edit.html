@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>Edit {{user.first_name}}</h1>
 </div>
-<div class="col-md-offset-4 col-md-4">
+<div class="col-md-offset-4 col-md-4" ngController="userUpdateController">
   <div class="row">
     <form ng-submit="update()">
       <fieldset class="form-group">
@@ -12,6 +12,9 @@
         <label>Last Name</label>
         <input type="text" class="form-control" ng-model="user.last_name">
       </fieldset>      
+
+        <div class="button" ngf-select ng-model="user.avatar" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Select</div>
+        <img ng-show="user.avatar.$valid" ngf-thumbnail="user.avatar" class="thumb"> <button ng-click="user.avatar = null" ng-show="user.avatar">Remove</button>
       <div class="checkbox"></div>
       <button type="submit" class="btn btn-primary">Update</button>
     </form>

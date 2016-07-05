@@ -8,12 +8,6 @@
         <div class="col-md-12 panel panel-default" ng-repeat="post in posts">
           <h1><a href="/#{{post.url}}">{{post.title}}</a></h1>
           <span class="post-info">{{post.created_at | date:'dd MMM yyyy'}} - {{post.user.first_name}} </span>
-          <div>          
-            <div ng-if="user.id == post.user_id">
-              <a href="/#/posts/{{post.id}}/edit"><i class="fa fa-edit"></i></a>
-              <a data-confirm="Are you sure?" rel="nofollow"  ng-click="delete(post.id)"><i class="fa fa-trash"></i></a>
-            </div>
-          </div>
           <div class="panel-body">{{post.description | previewBlog }}</div>
           <div class="panel-body"><a href="/#{{post.url}}">Read More</a></div>
         </div>

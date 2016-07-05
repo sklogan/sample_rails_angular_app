@@ -1,5 +1,5 @@
 json.array!(@posts) do |post|
-  json.extract! post, :id, :title, :user_id, :description, :created_at
+  json.extract! post, :id, :title, :description, :created_at
   json.url post_path(post)
   json.user do |user|
 	  json.first_name post.user.first_name

@@ -1,19 +1,18 @@
 <div class="row" ng-controller="updatePostsController">
 	<h1>Edit {{post.title}}</h1>
 
-	<form>
+	<form ng-submit="update()">
 	    <div class="form-group">
 	        <label>Title</label>		
 	        <input class="form-control" ng-model="post.title"></input>
 	    </div>
-	    <div class="form-group">
+	    <div class="form-group" ng-controller="TinyMceController">
 	        <label>Description</label>
-	        <textarea class="form-control" ng-model="post.description"></textarea>
+	        <textarea class="form-control" ng-model="post.description" ui-tinymce="tinymceOptions"></textarea>
 	    </div>
-	    <input type="submit" class="btn btn-primary" value="Save" ng-click="update()"></input>
+	    <input type="submit" class="btn btn-primary" value="Save"></input>
 	</form>
 </div>
-<div class="row">
-	<a href="/#/posts/{{post.id}}/edit">Edit</a>
+<div class="row">	
 	<a href="/#/posts">Back</a>
 </div>

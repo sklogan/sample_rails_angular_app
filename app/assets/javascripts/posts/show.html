@@ -1,10 +1,13 @@
 <div class="row">
 	<h1>{{post.title}}</h1>
 	<div class="post-info">{{post.created_at | date:'dd MMM yyyy'}} - {{post.user.first_name}} </div>
+	<div ng-if="user.id == post.user_id">
+    <a href="/#/posts/{{post.id}}/edit"><i class="fa fa-edit"></i></a>
+    <a data-confirm="Are you sure?" rel="nofollow"  ng-click="delete(post.id)"><i class="fa fa-trash"></i></a>
+  </div>
 	<div class="post-description" ng-bind-html="getHtml(post.description)"></div>
 </div>
 
-<div class="row">
-	<a href="/#/posts/{{post.id}}/edit">Edit</a>
+<div class="row">            
 	<a href="/#/posts">Back</a>
 </div>

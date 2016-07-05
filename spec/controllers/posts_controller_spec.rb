@@ -57,4 +57,20 @@ RSpec.describe PostsController, type: :controller do
 			end
 		end	
 	end
+
+	describe "GET #show" do		
+		before(:each) do
+			@post = FactoryGirl.create(:post)
+			@user = @post.user
+		end
+		
+		it "should render json of post including user details" do
+			get :show, params: {id: @post.id, format: :json }
+			post_record = assigns(:post)
+			expect(post_record).to eq(@post)
+			expect(response.header['Content-Type']).to include('application/json')
+			expect(json).to eq(JSON.parse(@post.attributes.to_json).merge({'user' => {'first_name' => @user.first_name, 'last_name' => @user.last_name}}))
+		end
+	end
+
 end

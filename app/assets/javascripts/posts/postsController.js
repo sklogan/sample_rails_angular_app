@@ -1,11 +1,6 @@
-app.controller('postsController', function($scope, $state, Post, Auth){
+app.controller('postsController', function($scope, $state, Post){
    Post.query(function(data) {
-    $scope.posts = data;    
-    Auth.currentUser().then(function(user) {
-      $scope.user = user;
-    }, function(error) {
-        $scope.user = {}
-    });
+    $scope.posts = data;       
   });
 
   $scope.delete = function(post_id) {
@@ -15,19 +10,29 @@ app.controller('postsController', function($scope, $state, Post, Auth){
   };
 });
 
-app.controller('showPostsController', function($scope, $stateParams, $sce, Post){  
+
+
+app.controller('showPostsController', function($scope, $stateParams, $sce, Auth, Post){  
   Post.get({ id: $stateParams.id }, function(data) {
     $scope.post = data;
   });
+
   $scope.getHtml = function(html){
     return $sce.trustAsHtml(html);
   };
+
+  Auth.currentUser().then(function(user) {
+    $scope.user = user;
+  }, function(error) {
+      $scope.user = {}
+  });
+
 });
 
 app.controller('updatePostsController', function($scope, $state, $stateParams, Post){  
   $scope.update = function() {
     Post.update({id: $stateParams.id}, $scope.post, function(){
-      $state.go('post', {id: stateParams.id});      
+      $state.go('post', {id: $stateParams.id});      
     })
   };
 });
