@@ -1,16 +1,16 @@
 <div class="row" ng-controller="createPostsController">
 	<h1>Add new post</h1>
 
-	<form>
+	<form ng-submit="create()">
 	    <div class="form-group">
 	        <label>Title</label>		
-	        <input class="form-control" ng-model="post.title"></input>
+	        <input class="form-control" ng-model="post.title" ng-required="true"></input>
 	    </div>
-	    <div class="form-group">
+	    <div class="form-group" ng-controller="TinyMceController">
 	        <label>Description</label>
-	        <textarea class="form-control" ng-model="post.description"></textarea>
+	        <textarea class="form-control" ng-model="post.description" ui-tinymce="tinymceOptions"></textarea>
 	    </div>
-	    <input type="submit" class="btn btn-primary" value="Save" ng-click="create()"></input>
+	    <input type="submit" class="btn btn-primary" value="Save"></input>
 	</form>
 </div>
 <div class="row">
