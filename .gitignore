@@ -20,5 +20,6 @@ config/database.yml
 tmp/*
 log/*
 public/system
+public/test
 # Ignore Byebug command history file.
 .byebug_history
