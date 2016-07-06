@@ -11,7 +11,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     }).state('edit_user', {
       url: '/users/edit',
       templateUrl: 'users/edit.html',      
-      controller: 'userUpdateController'
+      controller: 'userEditController'
+    }).state('user', {
+      url: '/users/{id}',
+      templateUrl: 'users/show.html',      
+      controller: 'userShowController'
     }).state('posts', {
       url: '/',
       templateUrl: 'posts/index.html',

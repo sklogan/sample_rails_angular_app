@@ -14,10 +14,13 @@ RSpec.describe RegistrationsController, type: :controller do
 
 	it "should update current_user first name and last name" do
 		expect(subject.current_user).to_not eq(nil)		
-    put :update, params: { user: { first_name: 'New first name', last_name: 'New last name' } }
+    put :update, params: { user: { first_name: 'New first name', last_name: 'New last name', website: 'http://github.com', title: 'Data analyst', description: "About the user" } }
     subject.current_user.reload        
     expect(subject.current_user.first_name).to eq('New first name')
     expect(subject.current_user.last_name).to eq('New last name')
+    expect(subject.current_user.website).to eq('http://github.com')
+    expect(subject.current_user.title).to eq('Data analyst')
+    expect(subject.current_user.description).to eq("About the user")
   end
 end
 

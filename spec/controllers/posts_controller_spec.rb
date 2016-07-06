@@ -16,7 +16,7 @@ RSpec.describe PostsController, type: :controller do
 			posts = assigns(:posts)
 			expect(posts).to match_array([@post])
 			expect(response.header['Content-Type']).to include('application/json')
-			expect(json).to eq([JSON.parse(@post.attributes.except('user_id', 'updated_at').to_json).merge({'url' => post_path(@post), 'user' => {'first_name' => @user.first_name, 'last_name' => @user.last_name, 'email' => @user.email}})])
+			expect(json).to eq([JSON.parse(@post.attributes.except('updated_at').to_json).merge({'url' => post_path(@post), 'user' => {'first_name' => @user.first_name, 'last_name' => @user.last_name, 'email' => @user.email}})])
 		end
 	end
 

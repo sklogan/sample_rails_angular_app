@@ -64,6 +64,7 @@ group :development, :test do
   gem 'factory_girl_rails', '4.7.0'
   gem 'faker', '1.6.3'
   gem 'rails-controller-testing'  
+  gem 'jasmine-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
