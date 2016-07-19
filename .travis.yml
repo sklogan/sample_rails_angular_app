@@ -6,3 +6,7 @@ language: ruby
 sudo: false
 rvm:
   2.3.0
+before_script:
+  - cp config/database.yml.example config/database.yml
+  - mysql -e 'create database sample_railgular_test;'
+  - bundle exec rake db:test:load
