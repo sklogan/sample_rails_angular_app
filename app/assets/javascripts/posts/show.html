@@ -3,9 +3,9 @@
 		<div class="post-heading">
 			<h1>{{post.title}}</h1>
 		</div>
-		<div class="post-meta">Posted by <a href="#">{{post.user.first_name}} </a> on {{post.created_at | date:'MMMM dd, yyyy'}}
+		<div class="post-meta">Posted by <a ui-sref="user({id: post.user_id})">{{post.user.first_name}} </a> on {{post.created_at | date:'MMMM dd, yyyy'}}
 			<div ng-if="user.id == post.user_id">
-		    <a href="/#/posts/{{post.id}}/edit"><i class="fa fa-edit"></i></a>
+		    <a ui-sref="edit_post({id: post.id})"><i class="fa fa-edit"></i></a>
 		    <a data-confirm="Are you sure?" rel="nofollow"  ng-click="delete(post.id)"><i class="fa fa-trash"></i></a>
 		  </div>
 		</div>		
@@ -14,5 +14,5 @@
 </div>
 
 <div class="row">            
-	<a href="/#/posts">Back</a>
+	<a ui-sref="posts">Back</a>
 </div>

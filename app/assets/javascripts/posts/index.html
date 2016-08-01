@@ -1,13 +1,13 @@
 <div class="row">
   <div class="span6 pull-right" ng-controller="navController">
-    <a href="/#/posts/new" ng-if="signedIn()"><i class="fa fa-plus-circle"></i> Add New</a>
+    <a ui-sref="new_post" ng-if="signedIn()"><i class="fa fa-plus-circle"></i> Add New</a>
   </div> 
   <div class="col-lg-10 col-lg-offset-1">
     <div class="post-preview" ng-repeat="post in posts">
-      <a ui-sref="post({})"><h2 class="post-title">{{post.title}}</h2></a>
+      <a ui-sref="post({id: post.id})"><h2 class="post-title">{{post.title}}</h2></a>
       <p class="post-meta">Posted by <a ui-sref="user({id: post.user_id})">{{post.user.first_name}} </a> on {{post.created_at | date:'MMMM dd, yyyy'}} </p>
       <div class="post-subtitle">{{post.description | previewBlog }}</div>
-      <div class="panel-body"><a href="/#{{post.url}}">Read More</a></div>
+      <div class="panel-body"><a ui-sref="post({id: post.id})">Read More</a></div>
       <hr>
     </div>  
   </div>  
