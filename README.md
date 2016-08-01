@@ -1,5 +1,7 @@
 ## README
 
+[![Build Status](https://travis-ci.org/sklogan/sample_rails_angular_app.svg?branch=master)](https://travis-ci.org/sklogan/sample_rails_angular_app)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -22,3 +24,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
