@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -14,6 +14,6 @@ module Railgular
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     config.to_prepare do
       DeviseController.respond_to :html, :json
-    end
+    end    
   end
 end

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '5.0.0'
 # Use Puma as the app server
 gem 'puma'
 
@@ -12,10 +12,10 @@ gem 'mysql2'
 gem 'devise'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '5.0.6'
 
 gem 'bootstrap'
-gem "font-awesome-rails"
+gem 'font-awesome-rails', '4.6.3.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -43,7 +43,7 @@ gem "bower-rails", "~> 0.10.0"
 gem 'angular-rails-templates'
 
 gem 'angularjs-file-upload-rails', '~> 2.2.0'
-gem "paperclip", "~> 5.0.0.beta2"
+gem "paperclip", "5.0.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
