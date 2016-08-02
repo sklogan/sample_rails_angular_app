@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RegistrationsController, type: :controller do
-	include Devise::TestHelpers
+	include Devise::Test::ControllerHelpers
 	before(:each) do
 		@request.env["devise.mapping"] = Devise.mappings[:user]
     user = FactoryGirl.create(:user, first_name: 'old first name', last_name: 'old last name')

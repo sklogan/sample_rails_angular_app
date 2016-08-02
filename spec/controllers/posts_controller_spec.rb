@@ -43,7 +43,7 @@ RSpec.describe PostsController, type: :controller do
 			end
 		end	
 
-		context "not logged in" do					
+		context "a not logged in user" do					
 			it "should not create a new post with valid record" do
 				post :create, params: { post: { title: 'New post', description: 'post description'}, format: :json}
 				expect(Post.count).to eq(0)
