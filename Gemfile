@@ -38,12 +38,13 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "bower-rails", "~> 0.10.0"
+gem 'bower-rails', '~> 0.10.0'
 
 gem 'angular-rails-templates'
 
 gem 'angularjs-file-upload-rails', '~> 2.2.0'
-gem "paperclip", "5.0.0"
+gem "paperclip", '5.0.0'
+gem 'redis-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

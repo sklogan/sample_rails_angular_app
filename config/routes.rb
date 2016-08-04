@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+  mount ActionCable.server => '/cable'
   devise_for :users, controllers: {registrations: 'registrations'}
   as :user do
     put 'users' => 'devise/registrations#update'               

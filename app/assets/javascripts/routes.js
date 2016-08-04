@@ -31,6 +31,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: '/posts/{id}/edit',
       templateUrl: 'posts/edit.html',
       controller: 'showPostsController'
+    }).state('chat', {
+      url: '/chat/{id}',
+      templateUrl: 'chat/chat.html',
+      controller: 'chatController'    
     });
     $urlRouterProvider.otherwise('/');
 });

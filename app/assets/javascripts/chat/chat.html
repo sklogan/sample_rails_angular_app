@@ -1,0 +1,35 @@
+<div class="popup-head">
+	<div class="popup-head-left pull-left"><img src="{{user.avatar.medium}}" alt="{{user.title}}"> {{user.first_name}} {{user.last_name}}</div>
+	<div class="popup-head-right pull-right">
+		<div class="btn-group">
+			<button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
+				<i class="fa fa-cog"></i> </button>
+				<ul role="menu" class="dropdown-menu pull-right">
+					<li><a ng-click="blockUser()">Block</a></li>
+					<li><a ng-click="clearChat()">Clear Chat</a></li>
+				</ul>
+			</div>
+
+			<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="fa fa-off"></i></button>
+		</div>
+	</div>
+	<div class="popup-messages">
+		<div class="direct-chat-messages">			
+			<div class="chat-box-single-line">
+				<abbr class="timestamp"> {{date | date:'d MMMM, yyyy'}}</abbr>
+			</div>
+			<div id="message-content" class="message-list"></div>
+			<div class="popup-messages-footer">
+				  <form ng-submit="sendChat()">
+					  <textarea  ng-enter="sendChat()" id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message" ng-model="message" />
+				  </form>	
+					<div class="btn-footer">
+						<button class="bg_none"><i class="fa fa-film"></i> </button>
+						<button class="bg_none"><i class="fa fa-camera"></i> </button>
+						<button class="bg_none"><i class="fa fa-paperclip"></i> </button>
+						<button class="bg_none pull-right"><i class="fa fa-thumbs-up"></i> </button>
+					</div>
+				</div>			
+		</div>
+	</div>	
+</div>
